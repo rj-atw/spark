@@ -197,6 +197,9 @@ object FunctionRegistry {
 
   // Note: Whenever we add a new entry here, make sure we also update ExpressionToSQLSuite
   val expressions: Map[String, (ExpressionInfo, FunctionBuilder)] = Map(
+
+    expression[WasmAggregation](name = "wasm_agg"),
+
     // misc non-aggregate functions
     expression[Abs]("abs"),
     expression[Coalesce]("coalesce"),

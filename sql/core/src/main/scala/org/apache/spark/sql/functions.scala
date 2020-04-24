@@ -4895,4 +4895,6 @@ object functions {
   def callUDF(udfName: String, cols: Column*): Column = withExpr {
     UnresolvedFunction(udfName, cols.map(_.expr), isDistinct = false)
   }
+
+  def wasmAgg(e: Column) = withAggregateFunction( WasmAggregation(e.expr) )
 }
